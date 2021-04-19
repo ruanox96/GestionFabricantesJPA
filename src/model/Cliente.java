@@ -1,4 +1,4 @@
-package model.entities;
+package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -26,17 +26,14 @@ public class Cliente implements Serializable {
 
 	private String dniNie;
 
-
-	private String email;
-
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaNac;
-
 
 	private String localidad;
 
 
 	private String nombre;
+
 
 	//bi-directional many-to-one association to Venta
 	@OneToMany(mappedBy="cliente")
@@ -61,16 +58,16 @@ public class Cliente implements Serializable {
 		this.activo = activo;
 	}
 
-
-
 	public String getApellidos() {
 		return this.apellidos;
 	}
 
+
+
+
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-
 
 
 	public String getDniNie() {
@@ -81,13 +78,6 @@ public class Cliente implements Serializable {
 		this.dniNie = dniNie;
 	}
 
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 	public Date getFechaNac() {
 		return this.fechaNac;
@@ -106,7 +96,6 @@ public class Cliente implements Serializable {
 		this.localidad = localidad;
 	}
 
-	
 
 	public String getNombre() {
 		return this.nombre;
